@@ -10,7 +10,11 @@ genai.configure(
     api_key=st.secrets["GEMINI_API_KEY"]
 )
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-flash-latest")
+for m in genai.list_models():
+    print(m.name)   
+
+model = genai.GenerativeModel("gemini-flash-latest")
 
 # ---------------------------
 # MEMORY STORAGE
